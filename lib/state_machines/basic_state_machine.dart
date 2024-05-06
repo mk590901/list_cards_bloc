@@ -53,13 +53,7 @@ abstract class BasicStateMachine {
 
     event.getAction()?.run();
 
-    String? prevState = getStateName(_currentState);
-
     _currentState = transaction.state();
-
-    //String? currState = getStateName(_currentState);
-
-    //print ("trans [$prevState]->[$currState]");
 
     transaction.method()?.execute(event.getData());
 

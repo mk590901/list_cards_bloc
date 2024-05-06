@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'graph_mode.dart';
 import 'graph_widget.dart';
 
 class CustomCardWidget extends StatelessWidget {
