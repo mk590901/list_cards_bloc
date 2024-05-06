@@ -1,20 +1,13 @@
-# list_cards_bloc
+# List cards BLoC App
 
-A new Flutter project.
+Application allows to add and remove items to list using BLoC.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+## Introduction
+Some notes about project
+### Basic idea
+Ihe state of __ItemBloc__ is the mutable list itself and there are two events: __AddItemEvent__ for adding a row to the list and __RemoveItemEvent__ for removing the first item in the list.
+### Notes
+This is an interim project that may be further developed.
 
 ## Movie
 
