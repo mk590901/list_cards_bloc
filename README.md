@@ -18,6 +18,3 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Movie
 
-
-https://github.com/mk590901/list_cards_bloc/assets/125393245/cb7950a2-988c-4100-833d-65da5aacd0b8
-
