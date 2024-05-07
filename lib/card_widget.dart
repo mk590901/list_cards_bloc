@@ -33,6 +33,14 @@ class CustomCardWidget extends StatelessWidget {
                 fontStyle: FontStyle.italic)),
           ),
           graphWidget,
+          IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              // Action to be performed when the button is pressed
+              graphWidget.stop();
+              onDeleteWidgetAction();
+            },
+          ),
         ],
       ),
     );
