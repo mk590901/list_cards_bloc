@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:list_cards_bloc/utils.dart';
+import 'utils.dart';
 import 'card_widget.dart';
 import 'graph_mode.dart';
 import 'graph_widget.dart';

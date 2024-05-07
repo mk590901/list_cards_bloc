@@ -10,7 +10,6 @@ class DrawingBloc extends Bloc<Event, DrawingState> {
 
   DrawingBloc(super.state) {
     _stateMachine = DrawingStateMachine(state_(DrawingStates.drawing));
-
     on<Drawing>((event, emit) {
       done(event, emit);
     });

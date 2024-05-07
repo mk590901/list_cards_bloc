@@ -12,7 +12,7 @@ class StoreWrapper {
   final int _drawSeriesLength;  //  Drawable data size per second
   final int _seriesNumber;      //  Data buffer size
   final int _seriesLength;      //  Number of displayed drawable data pieces
-  final GraphMode _mode;  //  Mode
+  /*final*/late GraphMode _mode;  //  Mode
 
   late  CircularBuffer<int> buffer_;
 
@@ -189,6 +189,10 @@ class StoreWrapper {
 
   GraphMode mode() {
     return _mode;
+  }
+
+  void setMode(GraphMode mode) {
+    _mode = mode;
   }
 
   bool isFull() {

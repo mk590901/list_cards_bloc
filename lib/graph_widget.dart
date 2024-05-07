@@ -16,6 +16,7 @@ class GraphWidget extends StatelessWidget {
   final double width;
   final double height;
   final GraphMode mode;
+  late  VoidCallback onRefreshWidgetAction;
   final String uuid = const Uuid().v4().toString();
 
   bool _startStop = false;
@@ -29,7 +30,8 @@ class GraphWidget extends StatelessWidget {
       required this.samplesNumber,
       required this.width,
       required this.height,
-      required this.mode}) {
+      required this.mode,
+      }) {
     int pointsToDraw =
         (samplesNumber.toDouble() / (PERIOD.toDouble() / FREQ.toDouble()))
                 .toInt() +
@@ -37,8 +39,35 @@ class GraphWidget extends StatelessWidget {
     storeWrapper = StoreWrapper(samplesNumber, 5, pointsToDraw, mode);
   }
 
+  void setRefreshCallback(VoidCallback callback) {
+    onRefreshWidgetAction = callback;
+  }
+
   void stop() {
     obtain.stop(uuid);
+  }
+
+  void onChangeMode() {
+    storeWrapper.setMode(isFlowing() ? GraphMode.overlay : GraphMode.flowing);
+    onRefreshWidgetAction();
+  }
+
+  void onStartStop() {
+    _startStop = !_startStop;
+    if (_startStop) {
+      obtain.start(uuid);
+    } else {
+      obtain.stop(uuid);
+    }
+    onRefreshWidgetAction();
+  }
+
+  bool isFlowing() {
+    return storeWrapper.mode() == GraphMode.flowing;
+  }
+
+  bool isActive() {
+    return _startStop;
   }
 
   @override
@@ -47,18 +76,12 @@ class GraphWidget extends StatelessWidget {
       create: (_) => DrawingBloc(DrawingState(DrawingStates.drawing)),
       child: GestureDetector(
         onTap: () {
-          _startStop = !_startStop;
-          if (_startStop) {
-            obtain.start(uuid);
-          } else {
-            obtain.stop(uuid);
-          }
+          onStartStop();
         },
         child:
             BlocBuilder<DrawingBloc, DrawingState>(builder: (context, state) {
           obtain.set(storeWrapper.drawingFrequency(), context);
           storeWrapper.updateBuffer(state.counter());
-
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[

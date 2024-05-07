@@ -12,7 +12,7 @@ class DrawingStateMachine extends BasicStateMachine {
 
   @override
   void create() {
-    states_ [state_(DrawingStates.drawing)]   = State([ Trans(Drawing(),  state_(DrawingStates.drawing),  OnNothing())]);
+    states_ [state_(DrawingStates.drawing)] = State([Trans(Drawing(),  state_(DrawingStates.drawing),  OnNothing())]);
   }
 
   @override

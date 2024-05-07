@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-
 import 'drawing_bloc.dart';
 import 'events/draw_events.dart';
 import 'events/event.dart';
