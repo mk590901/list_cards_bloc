@@ -17,7 +17,7 @@ class GraphWidget extends StatelessWidget {
   final double width;
   final double height;
   final GraphMode mode;
-  late VoidCallback onPressedAction1;
+  late VoidCallback onDestroyAction;
   final String uuid = const Uuid().v4().toString();
 
   bool _startStop = false;
@@ -31,8 +31,8 @@ class GraphWidget extends StatelessWidget {
     storeWrapper = StoreWrapper(samplesNumber, 5, pointsToDraw, mode);
   }
 
-  void setButton(final VoidCallback onPressedAction) {
-    onPressedAction1 = onPressedAction;
+  void setDestroyButton(final VoidCallback onPressedAction) {
+    onDestroyAction = onPressedAction;
   }
 
   @override
@@ -74,7 +74,7 @@ class GraphWidget extends StatelessWidget {
                   obtain.stop(uuid);
                   _startStop = false;
                 }
-                onPressedAction1();
+                onDestroyAction();
               },
             ),
           ],
