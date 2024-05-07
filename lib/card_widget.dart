@@ -14,7 +14,7 @@ class CustomCardWidget extends StatelessWidget {
     required this.graphWidget,
     required this.onDeleteWidgetAction,
   }) {
-    graphWidget.setDestroyButton(onDeleteWidgetAction);
+    //graphWidget.setDestroyButton(onDeleteWidgetAction);
     title = "ECG Diagram [${graphWidget.uuid.substring(0, 8)}]";
     subtitle = "Sample rate is ${graphWidget.samplesNumber} points/s";
     iconData = Icons.info_outline;
