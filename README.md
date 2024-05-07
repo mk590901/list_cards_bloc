@@ -11,7 +11,5 @@ This is an interim project that may be further developed.
 
 ## Movie
 
-
-
-https://github.com/mk590901/list_cards_bloc/assets/125393245/d8c662ec-48ec-47e0-879e-b13b2fe6075f
+https://github.com/mk590901/list_cards_bloc/assets/125393245/cb115df5-a81a-4a62-ae37-8053d53c9adf
 
